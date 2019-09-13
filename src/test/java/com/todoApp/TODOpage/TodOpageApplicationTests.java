@@ -18,7 +18,7 @@ public class TodOpageApplicationTests {
 	@Autowired
 	private ListRepo repo;
 
-    @Test
+    /*@Test
     public void searchTaskTest() {
         ListsOfTodo newTask = new ListsOfTodo();
         repo.deleteAll();
@@ -35,7 +35,7 @@ public class TodOpageApplicationTests {
         Optional<ListsOfTodo> byId = repo.findById(2);
         String task = byId.get().getTask();
         assertEquals("updated task", task);
-    }
+    }*/
 
 
     @Test
