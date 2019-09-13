@@ -1,0 +1,1 @@
+insert into LISTS_OF_TODO values (1, 'task 1');
