@@ -16,17 +16,30 @@ public class ControllerAdded {
 
     @RequestMapping("/find")
     public List<ListsOfTodo> getList(@RequestParam int lid){
-        //ModelAndView mv = new ModelAndView("ShowList.jsp");
         List<ListsOfTodo> lists = repo.findByTask("task 1");
-        //mv.addObject(lists);
         return lists;
     }
-    /*@RequestMapping("/sort")
-    public List<ListsOfTodo> sortList() {
-        //ModelAndView mv = new ModelAndView("ShowList.jsp");
-        List<ListsOfTodo> lists = repo.findByTaskSorted("task 1");
-        //mv.addObject(lists);
+
+   @RequestMapping("/insert")
+   public ListsOfTodo setList(@RequestParam int lid, String tsk) {
+       ListsOfTodo task = new ListsOfTodo();
+       task.setLid(lid);
+       task.setTask(tsk);
+       ListsOfTodo lists = repo.save(task);
+       return lists;
+   }
+
+    @RequestMapping("/update")
+    public ListsOfTodo updateList(@RequestParam int lid, String tsk) {
+        ListsOfTodo task = new ListsOfTodo();
+        task.setLid(lid);
+        task.setTask(tsk);
+        ListsOfTodo lists = repo.save(task);
         return lists;
     }
-*/
+
+    @RequestMapping("/delete")
+    public void deleteFromList(@RequestParam int lid) {
+        repo.deleteById(lid);
+    }
 }
